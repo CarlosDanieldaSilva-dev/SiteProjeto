@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Raleway, arial;
+    font-size: 16px;
+    padding-top: 100px;/*para descer o banner de nao deixar ele sumir no topo*/
+}
+header{
+    width: 100%;
+    background: #ffcb00;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    position: fixed;/*para fixar a barra de bavegação no topo*/
+    top: 0;/*para nao descer todo o site para baixo*/
+}
+header nav{ /* configurando apenas o nav que esta no header*/
+    float: right;
+}
+header nav ul{ /*configurando apenas os UL que estão em na*/
+    list-style: none; /*utilizado para tirar os simbolos das listas*/
+}
+header nav ul li{ /*vai formatar todos os LI dentro do nav*/
+    display: inline-block; /*utilizado para deixar um nav do lado do outro*/
+    margin: 15px; /*deixa os nav dentro do LI espaçados*/
+    transition: all 0.5s;/*para colocar o efeito de fade quando o navi mudar a cor ao passar o mouse em cima*/
+}
+header nav ul li a{ /*vai formatar todos os A dentro do nav*/
+    text-decoration: none; /*tira o sublinhado dos icones*/
+    color: #fff;
+    font-weight: 800; /*define a grossura da fonte*/
+}
+/*para fazer os nav mudar de cor quando passarmos o maouse por cima fazemos assim na parte de baixo*/
+header nav ul li a:hover{/*nao pode ter espaço entre o a:hover*/
+    color: #f00;
+}
+.banner img {
+  width: 100%;
+}
+main h1, footer p{/*aproveitando a mesma centralização do main subtitulo e do footer*/
+    text-align: center; /*vai deuxar o texto do h1 centralizado na tela*/
+}
+/*ainda em main vamos restringir a grid para ela nao pegar toda a tela*/
+main{
+    width: 1000px;
+    margin: auto; /*faz a esquerda e direita ficar com a mesma margem*/
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 33%); /*caso salve assim as imagens vao invadir a grid uma da outra para evitarmos isso fazemos a seguinte forma*/
+}
+.grid .coluna img{/* img é a imagem dentro da coluna*/
+    width: 100%; /*Vai deixar os 100% ddos 33%*/
+}
+.grid .coluna{
+    text-align: center;/*deixa tudo centralizado*/
+    border: 1px solid #ccc; /*cria uma box em volta das imagens*/
+    border-radius: 5px;
+    margin: 10px; /*vai deslocar os quadrados*/
+}
+.btn{/*classe que foi adicionado no final do hrf assim consigo mudar epenas os botoes que estão la*/
+    background: #fccb00;
+    text-decoration: none;/*tira a linha ndo nome do ver detalhes*/
+    padding: 10px 30px;/*deixa o texto centralixado dentro do backgroud*/
+    color: #f00;
+    border-radius: 100px;/*deixa a borda do botão ver detalhes arredondada*/
+    transition: all 0.5s;
+}
+.btn:hover{/*utilizado para ativara atransição colocada acima*/
+    background: #f00;/*deixa o fundo amarelo vermelho*/
+    color: #fff;/*deixa a cor da letra branca*/
+}
+footer{
+    background: #fccb00;
+    padding: 20px 0;/*deixa apenas em cima em baixo*/
+
+}
+footer a{
+    background: #fff;
+    text-decoration: none;
+    margin: 20px;
+    color: #f00;
+    border-radius: 100px;/*tira o quadrado branco*/
+    width: 30px;
+    height: 30px;/*ambos deixa todos os fundos do mesmo tamanho idenpendenet do formato da icone*/
+    display: inline-block;/*faz as imagens obdecer a regra de cima*/
+    line-height: 30px;/*centraliza os icone na altura da linha alihando eles no centro porem tem que ser o mesmo tamanha do height ali de cima*/
+    transition: all 0.5s;
+}
+footer a:hover{
+    background: #f00;
+    color: #fff;
+}
+.menu{
+    display: none;
+}
+.mostrar{
+    display: block;
+}
+
+@media (max-width: 420px) {
+    .banner{
+        display: none; /*vai remover o banner*/
+    }
+    main{
+        width: 100%; /*vai se auto ajustar na tela o layout*/
+    }
+    .grid{
+        grid-template-columns: 100%;/*colocando em 100% os carros vao ficar um me baixo do outro */
+    }
+    header nav ul{
+        display: block;
+        text-align: center;
+        margin: 0;/*a margin e o padding zerado serve para centralizar o icones junto com o widht do header de baixo*/
+        padding: 0;
+    }
+    header nav ul li{
+        width: 100%;/*deixou os icones um do lado do outro*/
+    }
+    header nav{
+        display: none;/*vai sumir a barra de navegação*/
+    }
+    header img{
+        width: 300px;/*diminui a logo do carro*/
+    }
+    .menu{/*configurando o botão de menu*/
+        display: block;
+        border:#fff;
+        padding: 10px 15px;
+        float: right;
+        color: #fff;
+       margin-top: 20px;        
+    }
+}
